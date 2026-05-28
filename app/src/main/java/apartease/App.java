@@ -24,19 +24,14 @@ public class App {
 
             if (pilihan.equals("1")) {
                 System.out.println("\n== Fitur Admin ==");
-                System.out.println("1. Registrasi Admin");
-                System.out.println("2. Login Admin");
-                System.out.println("3. Kembali ke Menu Utama");
+                System.out.println("1. Login Admin");
+                System.out.println("2. Kembali ke Menu Utama");
                 System.out.print("Pilih : ");
                 String pil = sc.nextLine().trim();
                 if (pil.equals("1")) {
-                    menuAdmin.registrasiAdmin();
-                } else if (pil.equals("2")) {
                     Admin admin = menuAdmin.loginAdmin();
                     if (admin != null) menuAdmin.menuAdmin(admin);
-                } else if (pil.equals("3")) {
-                  
-                } else {
+                } else if (pil.equals("2")) {
                     System.out.println("Pilihan tidak valid.");
                 }
             } else if (pilihan.equals("2")) {
