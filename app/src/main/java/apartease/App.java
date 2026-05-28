@@ -10,7 +10,7 @@ public class App {
         MenuPenyewa menuPenyewa = new MenuPenyewa(dm, sc);
 
         System.out.println("======================================");
-        System.out.println("   Sistem Penyewaan Apartemen");
+        System.out.println("   Sistem Penyewaan ApartEase");
         System.out.println("======================================");
 
         boolean running = true;

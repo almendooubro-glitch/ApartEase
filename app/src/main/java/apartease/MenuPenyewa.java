@@ -34,7 +34,7 @@ public class MenuPenyewa {
             }
         }
         if (username == null) {
-            System.out.println("Terlalu banyak kesalahan, kembali ke menu utama.");
+            System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama.");
             return;
         }
 
@@ -52,7 +52,7 @@ public class MenuPenyewa {
             }
         }
         if (password == null) {
-            System.out.println("Terlalu banyak kesalahan, kembali ke menu utama.");
+            System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama");
             return;
         }
 
@@ -84,7 +84,7 @@ public class MenuPenyewa {
                 coba++;
             }
         }
-        System.out.println("Terlalu banyak kesalahan, kembali ke menu utama.");
+        System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama");
         return null;
     }
 
@@ -135,13 +135,14 @@ public class MenuPenyewa {
         for (int i = 2; i <= 20; i++) {
             System.out.println("Lantai " + i + " : Unit Apartemen Aktif");
         }
-        System.out.println("\nKeterangan Tipe Unit:");
-        System.out.println("Huruf A - M : Studio Unit");
-        System.out.println("Huruf N - Z : Family Unit");
     }
 
     private void lihatUnit() {
         System.out.println("\n== Pilih dan Lihat Unit ==");
+        System.out.println("\nKeterangan Tipe Unit:");
+        System.out.println("Huruf A - M : Studio Unit");
+        System.out.println("Huruf N - Z : Family Unit");
+        
         int lantai = inputLantaiValid(3);
         if (lantai == -1) return;
 
@@ -168,7 +169,7 @@ public class MenuPenyewa {
         System.out.println("\n== Pesan Unit Apartemen ==");
 
         if (dm.hitungBookingPenyewa(penyewa.getUsername()) >= 2) {
-            System.out.println("Anda sudah mencapai batas maksimal 2 pesanan.");
+            System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama");
             return;
         }
 
@@ -234,7 +235,7 @@ public class MenuPenyewa {
     }
     }
     if (jumlahDurasi == -1) {
-    System.out.println("Terlalu banyak kesalahan, kembali ke menu.");
+    System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama");
     return;
     }
 
@@ -249,7 +250,7 @@ public class MenuPenyewa {
         System.out.print("Konfirmasi pesan? (y/n) : ");
         String konfirmasi = sc.nextLine().trim();
 
-        if (!konfirmasi.equalsIgnoreCase("y")) {
+        if (!konfirmasi.equalsIgnoreCase("y") && !konfirmasi.equalsIgnoreCase("yes")) {
             System.out.println("Pemesanan dibatalkan.");
             return;
         }
@@ -300,7 +301,7 @@ public class MenuPenyewa {
             coba++;
         }
         if (target == null) {
-            System.out.println("Terlalu banyak kesalahan, kembali ke menu.");
+            System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama");
             return;
         }
 
@@ -338,7 +339,7 @@ public class MenuPenyewa {
                 coba++;
             }
         }
-        System.out.println("Terlalu banyak kesalahan, kembali ke menu.");
+        System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama");
     }
 
     private void lihatStatusPembayaran(Penyewa penyewa) {
@@ -349,7 +350,10 @@ public class MenuPenyewa {
             return;
         }
         for (Booking b : bookings) {
-            System.out.println("ID: " + b.getIdBooking() + " | Unit: " + b.getKodeUnit() + " | Status: " + b.getStatusPembayaran());
+            System.out.println("ID: " + b.getIdBooking() 
+            + " | Unit: " + b.getKodeUnit()
+            + " | Total: Rp" + String.format("%,d", b.getTotalHarga())
+            + " | Status: " + b.getStatusPembayaran());
         }
     }
 
@@ -409,7 +413,7 @@ public class MenuPenyewa {
             coba++;
         }
         if (kodeUnit == null) {
-            System.out.println("Terlalu banyak kesalahan, kembali ke menu.");
+            System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama");
             return;
         }
 
@@ -459,7 +463,7 @@ public class MenuPenyewa {
                 coba++;
             }
         }
-        if (!emailOk) { System.out.println("Terlalu banyak kesalahan, kembali ke menu."); return; }
+        if (!emailOk) { System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama"); return; }
 
         coba = 0;
         boolean hpOk = false;
@@ -476,7 +480,7 @@ public class MenuPenyewa {
                 coba++;
             }
         }
-        if (!hpOk) { System.out.println("Terlalu banyak kesalahan, kembali ke menu."); return; }
+        if (!hpOk) { System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama"); return; }
 
         System.out.print("Password baru (kosongkan jika tidak ingin diubah) : ");
         String pw = sc.nextLine().trim();
@@ -504,7 +508,7 @@ public class MenuPenyewa {
                 coba++;
             }
         }
-        System.out.println("Terlalu banyak kesalahan, kembali ke menu.");
+        System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama.");
         return -1;
     }
 
@@ -519,7 +523,7 @@ public class MenuPenyewa {
             System.out.println("Huruf harus satu karakter antara A sampai Z.");
             coba++;
         }
-        System.out.println("Terlalu banyak kesalahan, kembali ke menu.");
+        System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama.");
         return 0;
     }
 
@@ -532,7 +536,7 @@ public class MenuPenyewa {
             System.out.println(label + " tidak boleh kosong.");
             coba++;
         }
-        System.out.println("Terlalu banyak kesalahan, kembali ke menu.");
+        System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama.");
         return null;
     }
 
@@ -545,7 +549,7 @@ public class MenuPenyewa {
             System.out.println("Format email tidak valid. Harus menggunakan @gmail.com");
             coba++;
         }
-        System.out.println("Terlalu banyak kesalahan, kembali ke menu utama.");
+        System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama.");
         return null;
     }
 
@@ -558,7 +562,7 @@ public class MenuPenyewa {
             System.out.println("No HP harus 11-12 digit angka saja.");
             coba++;
         }
-        System.out.println("Terlalu banyak kesalahan, kembali ke menu utama.");
+        System.out.println("Anda telah mencapai batas maksimum 3 kali percobaan. Kembali ke menu utama.");
         return null;
     }
 }
