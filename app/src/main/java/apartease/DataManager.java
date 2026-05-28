@@ -12,13 +12,15 @@ public class DataManager {
     private HargaSewa hargaSewa;
 
     public DataManager() {
-        daftarAdmin = new ArrayList<>();
-        daftarPenyewa = new ArrayList<>();
-        daftarBooking = new ArrayList<>();
-        daftarKomplain = new ArrayList<>();
-        hargaSewa = new HargaSewa();
-        daftarUnit = inisialisasiUnit();
-    }
+    daftarAdmin = new ArrayList<>();
+    daftarPenyewa = new ArrayList<>();
+    daftarBooking = new ArrayList<>();
+    daftarKomplain = new ArrayList<>();
+    hargaSewa = new HargaSewa();
+    daftarUnit = inisialisasiUnit();
+
+    daftarAdmin.add(new Admin("Administrator", "admin", "admin123", "admin@gmail.com", "08000000000"));
+    }      
 
     private List<UnitApartemen> inisialisasiUnit() {
         List<UnitApartemen> units = new ArrayList<>();
